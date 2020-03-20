@@ -7,6 +7,6 @@ COPY package.json /app
 COPY yarn.lock /app
 COPY . /app
 
-RUN yarn install
 RUN npm install nodemon
+CMD ["npm", "install"]
 CMD ["npm", "start"]

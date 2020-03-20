@@ -44,18 +44,18 @@ services:
       - ./server:/app
     links:
       - mysql
-    command: yarn start
+    command: npm start
   client:
     build: ./client
     environment:
       <<: *common-variables
-      NODE_PATH: src
+      NODE_PATH: www
     expose:
       - 3000
     ports:
       - 3000:3000
     volumes:
-      - ./client/src:/app/src
+      - ./client:/app
     links:
       - server
-    command: yarn start
+    command: npm start
