@@ -23,7 +23,7 @@ services:
       - mysql
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: mysql
+      MYSQL_HOST_IP: mysql
     links:
       - mysql:mysql
     ports:
@@ -42,6 +42,7 @@ services:
       - 8000:8000
     volumes:
       - ./server:/app
+      - /app/node_modules
     links:
       - mysql
     command: npm start
@@ -56,6 +57,7 @@ services:
       - 3000:3000
     volumes:
       - ./client:/app
+      - /app/node_modules
     links:
       - server
     command: npm start

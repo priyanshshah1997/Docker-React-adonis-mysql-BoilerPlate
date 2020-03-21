@@ -2,11 +2,8 @@ FROM node:10-alpine
 
 RUN mkdir -p /app
 WORKDIR /app
-
-COPY package.json /app
-COPY yarn.lock /app
-COPY . /app
-
-RUN npm install nodemon
-CMD ["npm", "install"]
+COPY package.json .
+RUN npm install --quiet
+RUN npm install nodemon --quiet
+COPY . .
 CMD ["npm", "start"]
