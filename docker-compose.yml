@@ -45,7 +45,9 @@ services:
       - /app/node_modules
     links:
       - mysql
-    command: npm start
+    networks:
+      - default
+    command: ./serverdockerCommand.sh
   client:
     build: ./client
     environment:
