@@ -53,10 +53,11 @@ class TimeZoneController {
       size: '2mb'
     })
   let filename = `TimeZoneData_${Date.now()}.xml`;
-    console.log(filename);
     await profilePic.move(Helpers.appRoot('FileUploads'), {
       name: filename
     })
+    var path = require('path');
+    console.log("directory path",path.resolve(__dirname));
     fs.readFile('FileUploads\\'+filename,"utf8", (err, data) => {
         if (err) console.log(err);
         var parser = new xml2js.Parser();
