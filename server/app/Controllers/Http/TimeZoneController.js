@@ -28,15 +28,6 @@ class TimeZoneController {
     return response.json(timezoneslist);
   }
 
-  /**
-   * Render a form to be used for creating a new timezone.
-   * GET timezones/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
   async create ({ request, response, view }) {
   }
 
