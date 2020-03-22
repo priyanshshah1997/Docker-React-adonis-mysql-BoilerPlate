@@ -9,4 +9,6 @@ COPY . /app
 
 RUN yarn install
 RUN npm install nodemon
+RUN npm i -g @adonisjs/cli
+RUN adonis migration:run
 CMD ["npm", "start"]
