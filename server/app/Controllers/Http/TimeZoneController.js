@@ -60,7 +60,7 @@ class TimeZoneController {
     })
     var path = require('path');
     console.log("directory path",path.resolve(__dirname));
-    fs.readFile('\\app\\FileUploads\\'+filename,"utf8", (err, data) => {
+    fs.readFile('/app/FileUploads/'+filename,"utf8", (err, data) => {
         if (err) console.log(err);
         var parser = new xml2js.Parser();
         parser.parseString(data, function (err, result) {
