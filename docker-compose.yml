@@ -45,6 +45,7 @@ services:
     volumes:
       - ./server:/app
       - /app/node_modules
+      - ./FileUploads:/app/FileUploads
     links:
       - mysql
     command: npm start
