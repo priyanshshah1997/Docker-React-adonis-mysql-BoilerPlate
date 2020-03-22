@@ -26,6 +26,7 @@ services:
       MYSQL_HOST_IP: mysql
     links:
       - mysql:mysql
+    tty: true
     ports:
       - 8080:80
     restart: always
@@ -33,6 +34,7 @@ services:
     build: ./server
     depends_on:
       - mysql
+    tty: true
     expose:
       - 8000
     environment:
