@@ -23,6 +23,8 @@ class TimeZoneController {
    */
   async index ({ request, response, view }) {
     let timezoneslist = await timezone.query().fetch();
+    var path = require('path');
+    console.log("directory path",path.resolve(__dirname));
     return response.json(timezoneslist);
   }
 
